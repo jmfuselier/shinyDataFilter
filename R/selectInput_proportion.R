@@ -54,30 +54,30 @@ proportionSelectInput <- function(inputId, label, vec, selected = "", ...,
     selected = selected,
     ...,
     options = c(
-      list(render = I("{
-        // format the way that options are rendered
-        option: function(item, escape) {
-          item.data = JSON.parse(item.label);
-          return '<div style=\"position: relative;\">' +
-                    '<div style=\"position: absolute; top: 5%; bottom: 5%; left: 0%; width: ' + item.data.prop * 100 + '%; background-color: #428BCA; opacity: 0.2;\"></div>' +
-                    '<div style=\"z-index: 1;\">' +
-                      escape(item.data.name) + ' ' +
-                      '<strong style=\"opacity: 0.3;\">' + escape(item.data.count) + '</strong>' +
-                    '</div>' +
-                 '</div>';
-        },
+      # list(render = I("{
+      #   // format the way that options are rendered
+      #   option: function(item, escape) {
+      #     item.data = JSON.parse(item.label);
+      #     return '<div style=\"position: relative;\">' +
+      #               '<div style=\"position: absolute; top: 5%; bottom: 5%; left: 0%; width: ' + item.data.prop * 100 + '%; background-color: #428BCA; opacity: 0.2;\"></div>' +
+      #               '<div style=\"z-index: 1;\">' +
+      #                 escape(item.data.name) + ' ' +
+      #                 '<strong style=\"opacity: 0.3;\">' + escape(item.data.count) + '</strong>' +
+      #               '</div>' +
+      #            '</div>';
+      #   },
 
-        // avoid data vomit splashing on screen when an option is selected
-        item: function(item, escape) {
-          item.data = JSON.parse(item.label);
-          return '<div style=\"padding-left: 0.5em; padding-right: 0.5em;\">' +
-                   escape(item.value) + ' ' +
-                   '<strong style=\"opacity: 0.3;\">' +
-                     '(' + escape(item.data.count) + ')' +
-                   '</strong>' +
-                 '</div>';
-        }
-      }")),
+      #   // avoid data vomit splashing on screen when an option is selected
+      #   item: function(item, escape) {
+      #     item.data = JSON.parse(item.label);
+      #     return '<div style=\"padding-left: 0.5em; padding-right: 0.5em;\">' +
+      #              escape(item.value) + ' ' +
+      #              '<strong style=\"opacity: 0.3;\">' +
+      #                '(' + escape(item.data.count) + ')' +
+      #              '</strong>' +
+      #            '</div>';
+      #   }
+      # }")),
 
       # fix for highlight persisting
       # https://github.com/selectize/selectize.js/issues/1141
