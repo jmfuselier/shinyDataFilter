@@ -41,10 +41,9 @@ proportionSelectInput <- function(inputId, label, vec, selected = "", ...,
   labels <- Map(function(v) {
     json <- sprintf(strip_leading_ws('
     {
-      "name": "%s",
-      "prop": %f,
+      "name": "%s"
     }'),
-    v, vecr_props[[v]])
+    v)
   }, vecr_unique)
 
   choices <- as.list(vecr_unique)
