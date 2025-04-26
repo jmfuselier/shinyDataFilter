@@ -17,7 +17,7 @@ proportionSelectInput <- function(inputId, label, vec, selected = "", ...,
     placeholder = "", onInitialize, sort = c("count", "alpha", "order")) {
 
   sort <- match.arg(sort, c("count", "alpha", "order"), several.ok = FALSE)
-
+  message("sort: ", sort)
   vecr <- if (is.reactive(vec)) vec else reactive(vec)
 
   vecr_counts <- sort(table(vecr()), decreasing = TRUE)
