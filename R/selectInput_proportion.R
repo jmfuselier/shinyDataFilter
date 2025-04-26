@@ -33,9 +33,11 @@ proportionSelectInput <- function(inputId, label, vec, selected = "", ...,
   } else {
     vecr_unique <- unique(Filter(Negate(is.na), vecr()))
   } 
+
+  V <- vecr_unique[1]  
+  message("v: ", V, " prop: ", vecr_props[[V]], " counts: ", vecr_counts[[V]])  
     
-  labels <- Map(function(v) {
-    message("v: ", v, " prop: ", vecr_props[[v]], " counts: ", vecr_counts[[v]])  
+  labels <- Map(function(v) {  
     json <- sprintf(strip_leading_ws('
     {
       "name": "%s",
