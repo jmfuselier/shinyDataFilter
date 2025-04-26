@@ -34,9 +34,9 @@ proportionSelectInput <- function(inputId, label, vec, selected = "", ...,
     vecr_unique <- unique(Filter(Negate(is.na), vecr()))
   }
 
-  message("vecr_counts: ", names(vecr_counts))
-  message("vecr_props: ", names(vecr_props))  
-  message("vecr_unique: ", vecr_unique)  
+  print("vecr_counts: ", names(vecr_counts))
+  print("vecr_props: ", names(vecr_props))  
+  print("vecr_unique: ", vecr_unique)  
     
   labels <- Map(function(v) {
     json <- sprintf(strip_leading_ws('
