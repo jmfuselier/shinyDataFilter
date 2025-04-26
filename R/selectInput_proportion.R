@@ -35,6 +35,7 @@ proportionSelectInput <- function(inputId, label, vec, selected = "", ...,
   } 
 
   V <- vecr_unique[1]  
+  message("v: ", V)  
   message("v: ", V, " prop: ", vecr_props[[V]], " counts: ", vecr_counts[[V]])  
     
   #labels <- Map(function(v) {  
