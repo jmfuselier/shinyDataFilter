@@ -42,7 +42,6 @@ proportionSelectInput <- function(inputId, label, vec, selected = "", ...,
     json <- sprintf(strip_leading_ws('
     {
       "name": "%s",
-    #  "prop": %f,
       "count": %d
     }'),
     v, vecr_counts[[v]])
