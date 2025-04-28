@@ -37,7 +37,7 @@ shiny_vector_filter.logical <- function(data, inputId, ...) {
       #    choices = choices(),
       #    selected = shiny::isolate(input$param) %||% c(),
       #    width = "100%")
-          shiny::CheckboxInput(ns("param"), NULL, TRUE) 
+          shiny::checkboxInput(ns("param"), NULL, TRUE) 
       )
     })
   
