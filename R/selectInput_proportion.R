@@ -21,6 +21,8 @@ proportionSelectInput <- function(inputId, label, vec, selected = "", ...,
   vecr <- if (is.reactive(vec)) vec else reactive(vec)
 
   vecr_counts <- sort(table(vecr()), decreasing = TRUE)
+  message("vecr_counts: ", vecr_counts)
+    
   vecr_names <- names(vecr_counts)
   vecr_counts <- as.numeric(vecr_counts)
   names(vecr_counts) <- vecr_names
@@ -34,7 +36,7 @@ proportionSelectInput <- function(inputId, label, vec, selected = "", ...,
     vecr_unique <- unique(Filter(Negate(is.na), vecr()))
   } 
 
-  V <- vecr_unique[1]  
+  V <- vecr_unique  
   message("v: ", V)  
   message("v: ", V, " prop: ", vecr_props[[V]], " counts: ", vecr_counts[[V]])  
     
