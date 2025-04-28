@@ -34,7 +34,7 @@ shiny_vector_filter.logical <- function(data, inputId, ...) {
           shiny::plotOutput(ns("plot"), height = "100%")),
         shiny::checkboxGroupInput(ns("param"), NULL,
           choices = choices(),
-          selected = shiny::isolate(input$param) %||% c(),
+       #   selected = shiny::isolate(input$param) %||% c(),
           width = "100%"))
     })
   
