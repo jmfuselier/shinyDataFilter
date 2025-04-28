@@ -21,8 +21,6 @@ proportionSelectInput <- function(inputId, label, vec, selected = "", ...,
   vecr <- if (is.reactive(vec)) vec else reactive(vec)
 
   vecr_counts <- sort(table(vecr()), decreasing = TRUE)
-  message("vecr_counts: ", vecr_counts)
-    
   vecr_names <- names(vecr_counts)
   vecr_counts <- as.numeric(vecr_counts)
   names(vecr_counts) <- vecr_names
@@ -41,7 +39,7 @@ proportionSelectInput <- function(inputId, label, vec, selected = "", ...,
     
     
   labels <- Map(function(v) {
-    message("v: ", V, " prop: ", vecr_props[[V]], " counts: ", vecr_counts[[V]])  
+    message("v: ", v, " prop: ", vecr_props[[v]], " counts: ", vecr_counts[[v]])  
     json <- sprintf(strip_leading_ws('
     {
       "name": "%s",
