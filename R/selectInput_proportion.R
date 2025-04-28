@@ -17,7 +17,7 @@ proportionSelectInput <- function(inputId, label, vec, selected = "", ...,
     placeholder = "", onInitialize, sort = c("count", "alpha", "order")) {
 
   sort <- match.arg(sort, c("count", "alpha", "order"), several.ok = FALSE)
-  message("sort: ", sort)
+  
   vecr <- if (is.reactive(vec)) vec else reactive(vec)
 
   vecr_counts <- sort(table(vecr()), decreasing = TRUE)
@@ -34,12 +34,7 @@ proportionSelectInput <- function(inputId, label, vec, selected = "", ...,
     vecr_unique <- unique(Filter(Negate(is.na), vecr()))
   } 
 
-  V <- vecr_unique  
-  message("v: ", V[12])  
-    
-    
-  labels <- Map(function(v) {
-    message("v: ", v, " prop: ", vecr_props[[v]], " counts: ", vecr_counts[[v]])  
+  labels <- Map(function(v) {  
     json <- sprintf(strip_leading_ws('
     {
       "name": "%s",
