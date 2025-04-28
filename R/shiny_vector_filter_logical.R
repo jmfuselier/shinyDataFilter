@@ -45,7 +45,7 @@ shiny_vector_filter.logical <- function(data, inputId, ...) {
         ggplot2::aes(x = factor(
           as.character(x_wo_NA()),
           levels = rev(choices()))) +
-        ggplot2::geom_bar(ggplot2::aes_(y = ~after_stat(count)/ sum(after_stat(count))),
+        ggplot2::geom_bar(ggplot2::aes_(y = ~ggplot2::after_stat(count)/ sum(ggplot2::after_stat(count))),
           width = 0.95,
           fill = grDevices::rgb(66/255, 139/255, 202/255),
           color = NA,
