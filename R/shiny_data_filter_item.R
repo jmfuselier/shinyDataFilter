@@ -98,21 +98,23 @@ shiny_data_filter_item <- function(input, output, session, data,
   # filter column-specific ui
   column_filter_ui <- shiny::tagList(
     shiny::h4(
-      shiny::icon("grip-vertical", class = "sortableJS-handle"),
-      shiny::uiOutput(ns("column_name"), inline = TRUE),
-      shiny::actionLink(
-        ns("column_select_edit_btn"),
-        NULL,
-        shiny::icon("edit")),
-      shiny::div(style = "display: inline-block; opacity: 0.3; font-style: italic;",
-        shiny::HTML(paste0(
-          shiny::span("("),
-          shiny::textOutput(ns("nrow"), inline = TRUE),
-          shiny::uiOutput(ns("filter_na_btn_ui"), inline = TRUE),
-          shiny::span(")")))),
-      shiny::actionLink(ns("remove_filter_btn"), NULL,
-        style = 'float: right;',
-        shiny::icon("times-circle"))
+      fluidRow(
+        shiny::icon("grip-vertical", class = "sortableJS-handle"),
+        shiny::uiOutput(ns("column_name"), inline = TRUE),
+        shiny::actionLink(
+          ns("column_select_edit_btn"),
+          NULL,
+          shiny::icon("edit")),
+        shiny::div(style = "display: inline-block; opacity: 0.3; font-style: italic;",
+          shiny::HTML(paste0(
+            shiny::span("("),
+            shiny::textOutput(ns("nrow"), inline = TRUE),
+            shiny::uiOutput(ns("filter_na_btn_ui"), inline = TRUE),
+            shiny::span(")")))),
+        shiny::actionLink(ns("remove_filter_btn"), NULL,
+          style = 'float: right;',
+          shiny::icon("times-circle"))
+      )
     ),
     shiny::uiOutput(ns("vector_filter_ui"))
   )
