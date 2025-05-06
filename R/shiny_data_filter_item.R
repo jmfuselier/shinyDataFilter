@@ -86,7 +86,7 @@ shiny_data_filter_item <- function(input, output, session, data,
       multiple = TRUE,
       width = "100%"
     ),
-    shiny::h4(style = "float: right;",
+    shiny::h4(style = "float: right; margin: 8px 0px 0px 8px;",
       shiny::actionLink(
         ns("remove_filter_btn"),
         NULL,
