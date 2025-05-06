@@ -98,7 +98,7 @@ shiny_data_filter_item <- function(input, output, session, data,
   # filter column-specific ui
   column_filter_ui <- shiny::tagList(
     shiny::h4(
-      fluidRow(
+      fillRow(
         shiny::icon("grip-vertical", class = "sortableJS-handle"),
         shiny::uiOutput(ns("column_name"), inline = TRUE),
         shiny::actionLink(
