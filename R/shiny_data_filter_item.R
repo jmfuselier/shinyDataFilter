@@ -100,8 +100,8 @@ shiny_data_filter_item <- function(input, output, session, data,
     shiny::h4(
       fluidRow(
         column(2, shiny::icon("grip-vertical", class = "sortableJS-handle")),
-        column(2, shiny::uiOutput(ns("column_name"), inline = TRUE)),
-        column( 2, shiny::actionLink(
+        column(4, shiny::uiOutput(ns("column_name"), inline = TRUE)),
+        column(2, shiny::actionLink(
                       ns("column_select_edit_btn"),
                       NULL,
                       shiny::icon("edit"))),
