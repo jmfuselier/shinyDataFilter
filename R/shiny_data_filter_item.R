@@ -99,7 +99,7 @@ shiny_data_filter_item <- function(input, output, session, data,
   column_filter_ui <- shiny::tagList(
     shiny::h4(
       fillRow(
-        flex = NA,
+        flex = c(1,1,1,1,1),
         shiny::icon("grip-vertical", class = "sortableJS-handle"),
         shiny::uiOutput(ns("column_name"), inline = TRUE),
         shiny::actionLink(
